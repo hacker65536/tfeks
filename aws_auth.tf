@@ -30,7 +30,7 @@ provider "kubernetes" {
   host                   = data.aws_eks_cluster.cluster2.endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster2.certificate_authority.0.data)
   token                  = data.aws_eks_cluster_auth.cluster2.token
-  config_path            = module.eks.kubeconfig_filename
+  config_path            = module.eks2.kubeconfig_filename
   load_config_file       = true
   version = "~> 1.11"
 }
